@@ -4,26 +4,48 @@
 To develop a Django application to store and retrieve data from a database using Object Relational Mapping(ORM).
 
 ## Entity Relationship Diagram
-
-Include your ER diagram here
+ 
+ ![output](entityrelationship.png)
 
 ## DESIGN STEPS
 
-### STEP 1:
+### Step 1:
+create and collect   customers infomartion using django application
 
-### STEP 2:
+### Step 2:
+Implement that as Python code
 
-### STEP 3:
+### Step 3:
+push that python code to github
 
-Write your own steps
+
+
 
 ## PROGRAM
+```
+from django.db import models
 
-Include your code here
+# Create your models here. 
+from django.db import models
+from django.contrib import admin
+# Create your models here.
+class Customer(models.Model):
+    customerid = models.CharField(max_length=8,primary_key=True)
+    customername =models.CharField(max_length=100)
+    mobilenumber =models.CharField(max_length=100)
+    email = models.EmailField()
+    quantity= models.IntegerField()
+    
 
-## OUTPUT
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ('customerid','customername','mobilenumber','email','quantity')
+```
 
-Include the screenshot of your admin page.
+## OUTPUT:
+  #### customerinfo
+![output](table.png)
 
 
-## RESULT
+
+## RESULT:
+The program was executed Successfully.
